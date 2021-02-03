@@ -1,6 +1,7 @@
 // Перепиши функцию toggleUserState() так, чтобы она не использовала callback - функцию callback,
 //     а принимала всего два параметра allUsers и userName и возвращала промис.
-setTimeout(() => {
+export default function taskTwo() {
+  console.clear();
   console.log('Task Two:');
   const users = [
     { name: 'Mango', active: true },
@@ -31,9 +32,9 @@ setTimeout(() => {
   };
 
   const logger = updatedUsers => console.table(updatedUsers);
-  const errorHandler = e => console.log(e);
+  const errorHandler = e => console.warn(e);
 
   toggleUserState(users, 'Mango').then(logger).catch(errorHandler);
   toggleUserState(users, 'Lux').then(logger).catch(errorHandler);
-  toggleUserState(users, 'asd').then(logger).catch(errorHandler);
-}, 2000);
+  //toggleUserState(users, 'asd').then(logger).catch(errorHandler);
+}
